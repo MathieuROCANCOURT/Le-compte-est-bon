@@ -19,5 +19,20 @@ def tiles():
     return take_tiles
 
 
+def apply_operation(operator, number1, number2):
+    match operator:
+        case '+':
+            return number1 + number2
+        case '-':
+            return number1 - number2
+        case '*':
+            return number1 * number2
+        case '/':
+            return number1 / number2
+        case _:
+            print("Le saisie de l'opérateur n'est pas bon. Recommencer")
+            return 0
+
+
 if __name__ == "__main__":
     number_to_have()
