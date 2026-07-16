@@ -42,13 +42,19 @@ def apply_operation(operator, number1, number2):
         case '+':
             return number1 + number2
         case '-':
+            if number1 - number2 < 0:
+                print("Résultat non positif. Recommencer.")
+                return None
             return number1 - number2
         case '*':
             return number1 * number2
         case '/':
+            if number1 / number2 is float:
+                print("Résultat qui n'est pas un entier. Recommencer.")
+                return None
             return number1 / number2
         case _:
-            print("Le saisie de l'opérateur n'est pas bon. Recommencer")
+            print("Le saisie de l'opérateur n'est pas bon. Recommencer.")
             return None
 
 
