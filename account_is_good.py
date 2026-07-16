@@ -71,6 +71,11 @@ def verify_input_user_numbers(input_user, tab_tiles):
 
 
 def continue_game():
+    """
+    Ask the user if this is the best possible number.
+
+    :return: A boolean
+    """
     input_user = ''
     while input_user != 'y' and input_user != 'n':
         input_user = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
