@@ -86,6 +86,15 @@ def continue_game():
 
 
 def is_end_game(number_to_account, value, array_size_tiles):
+    """
+    Check whether the game is over and notify the user.
+    The game is over when the target number equals the result of the operation performed, or when only one tile remains.
+
+    :param number_to_account: The target number
+    :param value: The number after operation
+    :param array_size_tiles: Tiles available array
+    :return: A boolean
+    """
     if value == number_to_account:
         print("Le compte est bon. Félicitations !!!")
         return True
