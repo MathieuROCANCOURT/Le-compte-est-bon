@@ -87,17 +87,8 @@ def loop_game(number_to_account, tab_tiles):
             tab_tiles.remove(int(number2))
             tab_tiles.append(operation_value)
 
-            if operation_value == number_to_account:
-                print("Le compte est bon. Félicitations !!!")
+            if is_end_game(number_to_account, operation_value, len(tab_tiles)):
                 break
-            if len(tab_tiles) == 1:
-                print(f"Le jeu est terminé. Votre nombre est {operation_value}")
-                break
-
-            print(f"Voici le nombre obtenu: {operation_value}")
-            continue_game = ''
-            while continue_game != 'y' or continue_game != 'n':
-                continue_game = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
 
 
 if __name__ == "__main__":
