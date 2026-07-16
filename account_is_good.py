@@ -45,6 +45,13 @@ def verify_input_user_numbers(input_user, tab_tiles):
     return False
 
 
+def continue_game():
+    continue_game = ''
+    while continue_game != 'y' or continue_game != 'n':
+        continue_game = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
+    return continue_game == 'y'
+
+
 def loop_game(number_to_account, tab_tiles):
     print(f"Voici le nombre a tomber tout pile: {number_to_account}.")
 
