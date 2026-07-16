@@ -30,6 +30,14 @@ def tiles():
 
 
 def apply_operation(operator, number1, number2):
+    """
+    Apply an operation to 2 numbers.
+
+    :param operator: A character
+    :param number1: First value
+    :param number2: Second value
+    :return: Calculate the value or None if it isn't an operator
+    """
     match operator:
         case '+':
             return number1 + number2
