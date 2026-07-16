@@ -108,6 +108,13 @@ def is_end_game(number_to_account, value, array_size_tiles):
 
 
 def loop_game(number_to_account, tab_tiles):
+    """
+    Before the loop, display the target number.
+    This looping game prompts the user to enter an operator, followed by two numbers separated by a space.
+
+    :param number_to_account: The target number
+    :param tab_tiles: Tiles available array
+    """
     print(f"Voici le nombre a tomber tout pile: {number_to_account}.")
 
     while len(tab_tiles) != 1:
