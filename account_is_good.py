@@ -52,6 +52,26 @@ def continue_game():
     return continue_game == 'y'
 
 
+def is_end_game(number_to_account, value, array_size_tiles):
+    if value == number_to_account:
+        print("Le compte est bon. Félicitations !!!")
+        return True
+
+    if array_size_tiles == 1:
+        print(f"Le jeu est terminé. Votre nombre est {value}")
+        return True
+
+    print(f"Voici le nombre obtenu: {value}")
+    continue_game = ''
+
+    while continue_game != 'y' or continue_game != 'n':
+        continue_game = input("Est-ce que c'est le nombre le plus proche pour vous ? [y/n]")
+
+    if continue_game == 'y':
+        return False
+    return True
+
+
 def loop_game(number_to_account, tab_tiles):
     print(f"Voici le nombre a tomber tout pile: {number_to_account}.")
 
