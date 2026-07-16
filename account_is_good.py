@@ -31,8 +31,36 @@ def apply_operation(operator, number1, number2):
             return number1 / number2
         case _:
             print("Le saisie de l'opérateur n'est pas bon. Recommencer")
-            return 0
+            return None
+
+
+def loop_game(number_to_account, tab_tiles):
+    print(f"Voici le nombre a tomber tout pile: {number_to_account}.")
+
+    while len(tab_tiles) != 1:
+        print(f"Voici vos tuiles: {tab_tiles}")
+        operator = input("Quelle opérateur souhaites-tu appliquer ? [+,-,*,/] ")
+        numbers = input(f"Parmi ces nombres {tab_tiles}, quelles sont les 2 nombres que tu souhaites sélectionner ?")
+        number1, number2 = numbers.split()
+
+        operation_value = apply_operation(operator, int(number1), int(number2))
+        if operation_value is None:
+            tab_tiles.remove(int(number1))
+            tab_tiles.remove(int(number2))
+            tab_tiles.append(operation_value)
+
+            if operation_value == number_to_account:
+                print("Le compte est bon. Félicitations !!!")
+                break
+            if len(tab_tiles) == 1:
+                print(f"Le jeu est terminé. Votre nombre est {operation_value}")
+                break
+
+            print(f"Voici le nombre obtenu: {operation_value}")
+            continue_game = ''
+            while continue_game != 'y' or continue_game != 'n':
+                continue_game = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
 
 
 if __name__ == "__main__":
-    number_to_have()
+    loop_game(number_to_have(), tiles())
