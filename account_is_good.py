@@ -34,6 +34,17 @@ def apply_operation(operator, number1, number2):
             return None
 
 
+def verify_input_user_numbers(input_user, tab_tiles):
+    tab_values_user = input_user.split()
+
+    if len(tab_values_user) == 2:
+        number1, number2 = map(int, tab_values_user)
+        if number1 in tab_tiles and number2 in tab_tiles:
+            return True
+
+    return False
+
+
 def loop_game(number_to_account, tab_tiles):
     print(f"Voici le nombre a tomber tout pile: {number_to_account}.")
 
