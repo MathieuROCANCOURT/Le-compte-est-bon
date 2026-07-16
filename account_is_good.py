@@ -92,7 +92,7 @@ def is_end_game(number_to_account, value, array_size_tiles):
 
     :param number_to_account: The target number
     :param value: The number after operation
-    :param array_size_tiles: Tiles available array
+    :param array_size_tiles: Tiles available array size
     :return: A boolean
     """
     if value == number_to_account:
