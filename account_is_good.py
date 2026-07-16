@@ -4,10 +4,20 @@ import secrets
 
 
 def number_to_have():
+    """
+    Generate a random value between 101 and 999.
+
+    :return: An integer between 101 and 999.
+    """
     return secrets.randbelow(999 - 101 + 1) + 101
 
 
 def tiles():
+    """
+    Generate tiles and takes 6 on 24 tiles available.
+
+    :return: 6 tiles in the array
+    """
     present_tiles = list(range(1, 11)) * 2 + [25, 50, 75, 100]
     take_tiles = []
 
