@@ -53,6 +53,13 @@ def apply_operation(operator, number1, number2):
 
 
 def verify_input_user_numbers(input_user, tab_tiles):
+    """
+    Check whether the numbers entered by the user are in the tiles array.
+
+    :param input_user: Entry user on numbers
+    :param tab_tiles: Tiles available array
+    :return: A boolean
+    """
     tab_values_user = input_user.split()
 
     if len(tab_values_user) == 2:
