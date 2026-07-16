@@ -46,10 +46,10 @@ def verify_input_user_numbers(input_user, tab_tiles):
 
 
 def continue_game():
-    continue_game = ''
-    while continue_game != 'y' or continue_game != 'n':
-        continue_game = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
-    return continue_game == 'y'
+    input_user = ''
+    while input_user != 'y' and input_user != 'n':
+        input_user = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
+    return input_user != 'y'
 
 
 def is_end_game(number_to_account, value, array_size_tiles):
@@ -77,7 +77,7 @@ def loop_game(number_to_account, tab_tiles):
             number1, number2 = numbers.split()
 
             operation_value = apply_operation(operator, int(number1), int(number2))
-            if operation_value is None:
+            if operation_value is not None:
                 tab_tiles.remove(int(number1))
                 tab_tiles.remove(int(number2))
                 tab_tiles.append(operation_value)
