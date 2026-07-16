@@ -62,14 +62,7 @@ def is_end_game(number_to_account, value, array_size_tiles):
         return True
 
     print(f"Voici le nombre obtenu: {value}")
-    continue_game = ''
-
-    while continue_game != 'y' or continue_game != 'n':
-        continue_game = input("Est-ce que c'est le nombre le plus proche pour vous ? [y/n]")
-
-    if continue_game == 'y':
-        return False
-    return True
+    return not continue_game()
 
 
 def loop_game(number_to_account, tab_tiles):
