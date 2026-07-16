@@ -49,6 +49,9 @@ def continue_game():
     input_user = ''
     while input_user != 'y' and input_user != 'n':
         input_user = input("Est-ce le nombre le plus proche pour vous ? [y/n]")
+
+    if input_user != 'n':
+        print("Le jeu est terminé.")
     return input_user != 'y'
 
 
