@@ -72,16 +72,18 @@ def loop_game(number_to_account, tab_tiles):
         print(f"Voici vos tuiles: {tab_tiles}")
         operator = input("Quelle opérateur souhaites-tu appliquer ? [+,-,*,/] ")
         numbers = input(f"Parmi ces nombres {tab_tiles}, quelles sont les 2 nombres que tu souhaites sélectionner ?")
-        number1, number2 = numbers.split()
 
-        operation_value = apply_operation(operator, int(number1), int(number2))
-        if operation_value is None:
-            tab_tiles.remove(int(number1))
-            tab_tiles.remove(int(number2))
-            tab_tiles.append(operation_value)
+        if verify_input_user_numbers(numbers, tab_tiles):
+            number1, number2 = numbers.split()
 
-            if is_end_game(number_to_account, operation_value, len(tab_tiles)):
-                break
+            operation_value = apply_operation(operator, int(number1), int(number2))
+            if operation_value is None:
+                tab_tiles.remove(int(number1))
+                tab_tiles.remove(int(number2))
+                tab_tiles.append(operation_value)
+
+                if is_end_game(number_to_account, operation_value, len(tab_tiles)):
+                    break
 
 
 if __name__ == "__main__":
